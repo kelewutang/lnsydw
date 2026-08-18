@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
@@ -15,6 +15,33 @@ var _hmt = _hmt || [];
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "辽宁事业编信息站",
+  "url": "https://lnsydw.cn/",
+  "description": "辽宁事业单位考试信息汇总，涵盖公告、报考答疑、笔试大纲、面试真题、选岗数据",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://lnsydw.cn/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "2027年辽宁省事业单位集中面向社会公开招聘笔试联考",
+  "startDate": "2027-03-01T09:00:00+08:00",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "location": {"@type": "Place","name": "辽宁省各地市考点"},
+  "description": "2027年辽宁事业单位联考预计2月发布公告，3月笔试。2026年招录11133人，8939个岗位",
+  "url": "https://lnsydw.cn/notice/liaoning-union-exam.html"
+}
 </script>
 </head>
 <body>
@@ -37,6 +64,7 @@ var _hmt = _hmt || [];
       <li><a href="qa/index.html">报考答疑</a></li>
       <li><a href="written/index.html">笔试备考</a></li>
       <li><a href="interview/index.html">面试</a></li>
+      <li><a href="notice/job-selection-guide.html">选岗数据</a></li>
       <li><a href="faq.html">FAQ</a></li>
       <li><a href="about.html">关于</a></li>
     </ul>
@@ -55,6 +83,30 @@ var _hmt = _hmt || [];
     <input type="text" placeholder="搜索：应届生界定 / 资格复审 / 档案问题...">
   </div>
 </section>
+
+<!-- 考试倒计时横幅 -->
+<div class="countdown-banner">
+  <div class="countdown-inner">
+    <div class="countdown-title">
+      <span class="countdown-icon">⏰</span>
+      <strong>2027年辽宁事业单位联考</strong>
+      <span class="countdown-status">备考期</span>
+    </div>
+    <div class="countdown-timer">
+      <span class="countdown-to">距公告预计发布还有</span>
+      <div class="countdown-item"><span class="cd-num" id="cd-days">--</span><span class="cd-label">天</span></div>
+      <div class="countdown-item"><span class="cd-num" id="cd-hours">--</span><span class="cd-label">时</span></div>
+      <div class="countdown-item"><span class="cd-num" id="cd-mins">--</span><span class="cd-label">分</span></div>
+      <div class="countdown-item"><span class="cd-num" id="cd-secs">--</span><span class="cd-label">秒</span></div>
+    </div>
+    <div class="countdown-meta">
+      <span>📅 公告预计：2027年2月</span>
+      <span>📝 笔试预计：2027年3月</span>
+      <span>👥 2026年招11133人</span>
+      <a href="notice/liaoning-union-exam.html" class="countdown-btn">历年公告 →</a>
+    </div>
+  </div>
+</div>
 
 <div class="container">
 
@@ -268,6 +320,20 @@ var _hmt = _hmt || [];
     </div>
   </div>
 
+</div>
+
+<!-- 订阅提醒 -->
+<div class="subscribe-section">
+  <div class="subscribe-inner">
+    <div class="subscribe-text">
+      <h3>🔔 考试提醒订阅</h3>
+      <p>收藏本网站，及时获取辽宁事业单位最新公告、报名时间、准考证打印、成绩查询等关键节点提醒，不错过任何考试机会。</p>
+    </div>
+    <div class="subscribe-actions">
+      <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="subscribe-btn">⬆ 收藏本站</button>
+      <a href="notice/liaoning-union-exam.html" class="subscribe-btn outline">查看历年公告 →</a>
+    </div>
+  </div>
 </div>
 
 <!-- 页脚 -->

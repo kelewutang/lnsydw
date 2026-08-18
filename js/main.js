@@ -66,6 +66,59 @@ function initFAQ() {
       q.parentElement.classList.toggle('open');
     });
   });
+  const expandAll = document.querySelector('.faq-expand-all');
+  if (expandAll) {
+    expandAll.addEventListener('click', () => {
+      const items = document.querySelectorAll('.faq-item');
+      const allOpen = Array.from(items).every(i => i.classList.contains('open'));
+      items.forEach(i => allOpen ? i.classList.remove('open') : i.classList.add('open'));
+      expandAll.textContent = allOpen ? '全部展开' : '全部收起';
+    });
+  }
+}
+
+// 考试倒计时（2027年联考公告预计2027年2月发布）
+function initCountdown() {
+  const daysEl = document.getElementById('cd-days');
+  if (!daysEl) return;
+  const target = new Date('2027-02-01T09:00:00+08:00').getTime();
+  function update() {
+    const now = Date.now();
+    const diff = target - now;
+    if (diff <= 0) {
+      daysEl.textContent = '0';
+      document.getElementById('cd-hours').textContent = '0';
+      document.getElementById('cd-mins').textContent = '0';
+      document.getElementById('cd-secs').textContent = '0';
+      return;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    daysEl.textContent = d;
+    document.getElementById('cd-hours').textContent = String(h).padStart(2, '0');
+    document.getElementById('cd-mins').textContent = String(m).padStart(2, '0');
+    document.getElementById('cd-secs').textContent = String(s).padStart(2, '0');
+  }
+  update();
+  setInterval(update, 1000);
+}
+
+// 柱状图动画
+function initCharts() {
+  const bars = document.querySelectorAll('.bar-fill');
+  if (!bars.length) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const width = entry.target.dataset.width;
+        if (width) entry.target.style.width = width;
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  bars.forEach(bar => observer.observe(bar));
 }
 
 // 搜索功能
@@ -143,4 +196,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initSearch();
   initTOC();
   initFadeIn();
+  initCountdown();
+  initCharts();
 });

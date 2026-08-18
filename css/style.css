@@ -1,4 +1,4 @@
-/* ===== 辽宁事业单位信息站 - 全站样式 ===== */
+﻿/* ===== 辽宁事业单位信息站 - 全站样式 ===== */
 :root {
   --primary: #1a5276;
   --primary-dark: #0e3a56;
@@ -748,4 +748,172 @@ img { max-width: 100%; height: auto; }
   .footer-inner { grid-template-columns: 1fr; }
   .card-grid { grid-template-columns: 1fr; }
   .quick-nav { grid-template-columns: repeat(2, 1fr); }
+}
+/* ===== 考试倒计时横幅 ===== */
+.countdown-banner {
+  background: linear-gradient(135deg, #1a5276 0%, #2980b9 50%, #3498db 100%);
+  color: #fff;
+  padding: 20px 0;
+  margin: 0;
+}
+.countdown-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.countdown-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+}
+.countdown-icon { font-size: 24px; }
+.countdown-status {
+  background: #e74c3c;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+.countdown-timer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.countdown-to {
+  font-size: 13px;
+  opacity: 0.9;
+  margin-right: 4px;
+}
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255,255,255,0.15);
+  border-radius: 8px;
+  padding: 6px 10px;
+  min-width: 48px;
+}
+.cd-num {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+  line-height: 1;
+}
+.cd-label {
+  font-size: 11px;
+  opacity: 0.85;
+  margin-top: 2px;
+}
+.countdown-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+  flex-wrap: wrap;
+}
+.countdown-btn {
+  background: #fff;
+  color: #1a5276;
+  padding: 6px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 13px;
+  transition: transform 0.2s;
+}
+.countdown-btn:hover { transform: translateY(-2px); }
+@media (max-width: 768px) {
+  .countdown-inner { flex-direction: column; text-align: center; }
+  .countdown-meta { justify-content: center; }
+  .cd-num { font-size: 20px; }
+}
+
+/* ===== 数据可视化图表 ===== */
+.chart-container { margin: 20px 0; }
+.chart-title { font-size: 16px; font-weight: bold; margin-bottom: 12px; color: var(--primary-dark); }
+.bar-chart { display: flex; flex-direction: column; gap: 10px; }
+.bar-row { display: flex; align-items: center; gap: 10px; }
+.bar-label { width: 100px; font-size: 13px; text-align: right; flex-shrink: 0; }
+.bar-track { flex: 1; background: #e9ecef; border-radius: 4px; height: 24px; position: relative; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 8px; color: #fff; font-size: 12px; font-weight: bold; transition: width 1s ease; }
+.bar-value { width: 60px; font-size: 13px; flex-shrink: 0; }
+
+/* ===== 公告筛选器 ===== */
+.filter-bar {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+.filter-group { display: flex; align-items: center; gap: 6px; }
+.filter-group label { font-size: 13px; color: var(--text-light); font-weight: bold; }
+.filter-group select {
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 13px;
+  background: #fff;
+  cursor: pointer;
+}
+.filter-reset {
+  padding: 6px 14px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.filter-reset:hover { background: var(--primary-dark); }
+/* ===== 订阅提醒模块 ===== */
+.subscribe-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 40px 0;
+  margin-top: 40px;
+}
+.subscribe-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.subscribe-text h3 { margin: 0 0 8px 0; font-size: 20px; color: var(--primary-dark); }
+.subscribe-text p { margin: 0; color: var(--text-light); font-size: 14px; max-width: 600px; line-height: 1.6; }
+.subscribe-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.subscribe-btn {
+  padding: 10px 24px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s;
+}
+.subscribe-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+.subscribe-btn.outline { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
+.subscribe-btn.outline:hover { background: var(--primary); color: #fff; }
+@media (max-width: 768px) {
+  .subscribe-inner { flex-direction: column; text-align: center; }
 }
